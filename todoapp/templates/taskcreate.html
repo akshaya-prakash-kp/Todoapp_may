@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     {% comment %} <link rel="stylesheet" href="{% static 'css/taskcreate.css' %}"> {% endcomment %}
+    
+</head>
+<style>
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: pink 
+}
+
+
+form {
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+}
+
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the form input fields */
+{% comment %} input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+} {% endcomment %}
+
+/* Style the submit button */
+button.btn {
+    background-color: #28a745;
+    color: #fff;
+    border: 2px solid #28a745;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button.btn:hover {
+    background-color: #218838;
+    border: 2px solid #218838;
+}
+
+/* Style the link */
+{% comment %} a {
+    text-decoration: none;
+    color: #007bff;
+} {% endcomment %}
+
+
+</style>   
+<body>
+    <form method = 'post' action ='' >
+            <h3>Todo App</h3>
+             {% csrf_token %}
+             {{form.as_p}}
+             <button type="submit" class="btn btn-outline-success;">submit</button>
+            <button type="submit" class="btn btn-outline-danger;"><a href="{% url 'task' %}">get task</a></button>
+
+        </div>
+    </form>
+</body>
+</html>
